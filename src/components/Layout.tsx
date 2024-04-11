@@ -14,6 +14,7 @@ const OuterContainer = styled(Box)`
   height: inherit;
   flex-direction: column;
   min-height: 100vh;
+  background-color: #f5f5f5;
 `;
 
 const InnerContainer = styled(Box)`
@@ -21,6 +22,7 @@ const InnerContainer = styled(Box)`
   flex: 1;
   overflow: hidden;
   height: inherit;
+  background-color: #f5f5f5;
 `;
 
 interface ILayoutProps {
@@ -36,7 +38,7 @@ export const Layout = ({ children }: ILayoutProps) => (
         <Drawer />
         <Main>{children}</Main>
       </InnerContainer>
-      <Footer>Footer</Footer>
+      <Footer></Footer>
     </OuterContainer>
   </DrawerContextProvider>
 );

@@ -1,6 +1,4 @@
-import { DashboardPage } from "./dashboard";
-import { OrdersPage } from "./orders";
-import { CustomersPage } from "./customers";
-import { InventoryPage } from "./inventory";
+import { FiveTakeayasPage } from "./five-takeaways";
+import { FinancialTermsPage } from "./financial-terms";
 
-export { DashboardPage, OrdersPage, CustomersPage, InventoryPage };
+export { FiveTakeayasPage, FinancialTermsPage};

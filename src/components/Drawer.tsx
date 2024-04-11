@@ -33,9 +33,9 @@ export const Drawer = () => {
   return (
     <StyledDrawer
       variant={isLargeScreen ? 'permanent' : 'temporary'}
-      open={!isLargeScreen && isOpened ? true : false}
-      onClose={() => toggleIsOpened(!isOpened)}
-      isOpened={isOpened}
+      open={!isLargeScreen && true ? true : false}
+      onClose={() => null}
+      isOpened={true}
     >
       <MenuItemsList items={menu}/>
     </StyledDrawer>

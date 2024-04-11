@@ -1,6 +1,4 @@
 export const ROUTES = {
-  main: '/dashboard',
-  orders: '/orders',
-  customers: '/customers',
-  inventory: '/inventory',
+  key_takeaways: '/key-takeaways',
+  fin_terms: '/fin-terms',
 };

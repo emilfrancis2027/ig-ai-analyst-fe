@@ -3,23 +3,27 @@ import * as React from 'react';
 import Card from '@mui/material/Card';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
 import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
-import { styled } from '@mui/material/styles';
 import { CSSProperties } from "react";
 import { getfinancialTerms } from "../api/getFinancialTerms";
+import LinearProgress from '@mui/material/LinearProgress';
 
 
 export const FinancialTermsPage = () => {
 
     const [result, setResult] = useState<string>("")
     const [input, setInput] = useState<string>("")
+    const [isLoading, setIsLoading] = useState<boolean>(false)
+
+    
 
     const getFinancialTermsFromText = () => {
+        setResult("")
+        setIsLoading(true)
         getfinancialTerms(input).then(async res => {
+            setIsLoading(false)
             const data = await res.text()
             setResult(data)
         })
@@ -36,6 +40,9 @@ export const FinancialTermsPage = () => {
                             <Button variant="outlined" size="large" onClick={() => getFinancialTermsFromText()}>Extract</Button>
                         </Stack>
                     </div>
+                    <br></br>
+                    <br></br>
+                    {isLoading ? <LinearProgress /> : null}
                     <div dangerouslySetInnerHTML={{ __html: result }}></div>
                 </Card>
             </Box>
